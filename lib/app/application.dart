@@ -9,7 +9,11 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Application",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      title: "Calculator App",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );
