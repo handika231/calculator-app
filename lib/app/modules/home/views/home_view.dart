@@ -180,8 +180,10 @@ class HomeView extends GetView<HomeController> {
                               if (controller.text.value.isNotEmpty) {
                                 controller.calculate();
                               } else {
-                                Get.snackbar('Error',
-                                    'Masukkan inputan terlebih dahulu');
+                                Get.snackbar(
+                                  'Error',
+                                  'Masukkan inputan terlebih dahulu',
+                                );
                               }
                             },
                             child: const SizedBox(

@@ -3,21 +3,30 @@ version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
 environment:
-  sdk: '>=2.17.6 <3.0.0'
+  sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  flutter_launcher_icons: ^0.10.0
   flutter_native_splash: ^2.2.7
   function_tree: ^0.8.13
   get: 4.6.5
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.10.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/calculator.png"
+
+flutter_native_splash:
+  image: assets/calculator.png
+  color: "#ffffff"
 
 flutter:
   uses-material-design: true

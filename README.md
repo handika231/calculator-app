@@ -1,16 +1,31 @@
-# calculator_app
 
-A new Flutter project.
+# Calculator App
 
-## Getting Started
+### Description
+Create simple calculator app using Flutter.
 
-This project is a starting point for a Flutter application.
+### Features
+- Dark mode
 
-A few resources to get you started if this is your first Flutter project:
+### Package
+- flutter_native_splash
+- flutter_launcher_icons
+- function_tree
+- get
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Tech Used
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Screenshots
+<img src="assets/2.png" width="200"  />
+<img src="assets/3.png" width="200" />
+<img src="assets/1.png" width="200" />
+
+## How to Clone this Repository
+
+Clone the project
+
+```bash
+  git clone https://github.com/handika231/calculator-app.git
+```
