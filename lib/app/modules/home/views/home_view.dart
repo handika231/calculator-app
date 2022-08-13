@@ -38,19 +38,23 @@ class HomeView extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const Text(
-                      '5768',
-                      style: TextStyle(
-                        fontSize: 70,
-                        fontWeight: FontWeight.bold,
+                    Obx(
+                      () => Text(
+                        controller.result.value,
+                        style: const TextStyle(
+                          fontSize: 70,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    Text(
-                      '90 + 89',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w600,
-                        color: context.theme.colorScheme.secondary,
+                    Obx(
+                      () => Text(
+                        controller.text.value,
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w600,
+                          color: context.theme.colorScheme.secondary,
+                        ),
                       ),
                     ),
                   ],
@@ -65,9 +69,9 @@ class HomeView extends GetView<HomeController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const CustomButton(text: '^'),
-                      const CustomButton(text: 'C'),
-                      const CustomButton(text: 'AC'),
+                      CustomButton(text: '^', value: '^'),
+                      CustomButton(text: 'C', value: 'Clear'),
+                      CustomButton(text: 'AC', value: 'AllClear'),
                       Flexible(
                         child: Material(
                           color: context.theme.primaryColor,
@@ -94,45 +98,75 @@ class HomeView extends GetView<HomeController> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      CustomButton(text: '('),
-                      CustomButton(text: ')'),
-                      CustomButton(text: '%'),
-                      CustomButton(text: ':'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      CustomButton(text: '7'),
-                      CustomButton(text: '8'),
-                      CustomButton(text: '9'),
-                      CustomButton(text: 'x'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      CustomButton(text: '4'),
-                      CustomButton(text: '5'),
-                      CustomButton(text: '6'),
-                      CustomButton(text: '-'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      CustomButton(text: '1'),
-                      CustomButton(text: '2'),
-                      CustomButton(text: '3'),
-                      CustomButton(text: '+'),
+                    children: [
+                      CustomButton(
+                        text: '(',
+                        value: '(',
+                      ),
+                      CustomButton(text: ')', value: ')'),
+                      CustomButton(text: '%', value: '%'),
+                      CustomButton(text: ':', value: '/'),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const CustomButton(text: '0'),
-                      const CustomButton(text: '.'),
+                      CustomButton(
+                        text: '7',
+                        value: '7',
+                      ),
+                      CustomButton(
+                        text: '8',
+                        value: '8',
+                      ),
+                      CustomButton(
+                        text: '9',
+                        value: '9',
+                      ),
+                      CustomButton(
+                        text: 'x',
+                        value: '*',
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButton(text: '4', value: '4'),
+                      CustomButton(text: '5', value: '5'),
+                      CustomButton(text: '6', value: '6'),
+                      CustomButton(text: '-', value: '-'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButton(
+                        text: '1',
+                        value: '1',
+                      ),
+                      CustomButton(
+                        text: '2',
+                        value: '2',
+                      ),
+                      CustomButton(
+                        text: '3',
+                        value: '3',
+                      ),
+                      CustomButton(
+                        text: '+',
+                        value: '+',
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButton(
+                        text: '0',
+                        value: '0',
+                      ),
+                      CustomButton(text: '.', value: '.'),
                       Expanded(
                         child: Material(
                           color: context.theme.primaryColor,
@@ -140,7 +174,9 @@ class HomeView extends GetView<HomeController> {
                           elevation: 10,
                           child: InkWell(
                             borderRadius: BorderRadius.circular(17),
-                            onTap: () {},
+                            onTap: () {
+                              controller.calculate();
+                            },
                             child: const SizedBox(
                               height: 70,
                               width: 70,
