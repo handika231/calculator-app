@@ -40,7 +40,9 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     Obx(
                       () => Text(
-                        controller.result.value,
+                        controller.result.value.isNotEmpty
+                            ? controller.result.value
+                            : "0",
                         style: const TextStyle(
                           fontSize: 70,
                           fontWeight: FontWeight.bold,
@@ -175,7 +177,12 @@ class HomeView extends GetView<HomeController> {
                           child: InkWell(
                             borderRadius: BorderRadius.circular(17),
                             onTap: () {
-                              controller.calculate();
+                              if (controller.text.value.isNotEmpty) {
+                                controller.calculate();
+                              } else {
+                                Get.snackbar('Error',
+                                    'Masukkan inputan terlebih dahulu');
+                              }
                             },
                             child: const SizedBox(
                               height: 70,

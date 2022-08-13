@@ -24,7 +24,7 @@ class HomeController extends GetxController {
     try {
       result.value = '${text.value.interpret().toInt()}';
     } catch (e) {
-      result.value = 'SOMETHING ERROR';
+      result.value = 'Error';
     }
   }
 }
