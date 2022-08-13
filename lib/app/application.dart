@@ -11,7 +11,12 @@ class Application extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: const Color(0xff243441),
+        primaryColor: const Color(0xffEB8034),
+        colorScheme: ColorScheme.fromSwatch(
+          accentColor: Colors.white60,
+          brightness: Brightness.dark,
+        ),
       ),
       title: "Calculator App",
       initialRoute: AppPages.INITIAL,
